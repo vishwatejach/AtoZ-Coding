@@ -1,0 +1,23 @@
+Link: https://bit.ly/3Z3scot
+
+
+D
+D C
+D C B 
+D C B A
+
+
+void alphaTriangle(int n) {
+    // Write your code here.
+    char c;
+    for(int i=0; i<n; i++)
+    {
+        c = 'A'+n-1;
+        for(int j=0; j<=i; j++)
+        {
+            cout<<c<<" ";
+            c--;
+        }
+        cout<<endl;
+    }
+}

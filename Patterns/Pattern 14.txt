@@ -1,0 +1,22 @@
+Link: https://bit.ly/3GyWCYs
+
+
+A
+A B 
+A B C
+A B C D
+
+
+
+void nLetterTriangle(int n) {
+    // Write your code here.
+    for(int i=0; i<n; i++)
+    {
+        char a = 'A';
+        for(int j=0; j<=i; j++)
+        {
+            cout<<a++<<" ";
+        }
+        cout<<endl;
+    }
+}
