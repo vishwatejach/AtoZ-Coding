@@ -1,0 +1,14 @@
+Link: https://www.codingninjas.com/codestudio/problems/count-digits_8416387 utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf
+
+
+int countDigits(int n){
+	// Write your code here.
+	int temp = n, cnt = 0, rem;
+	while(temp!=0)
+	{
+		rem = temp%10;
+		temp/=10;
+		if(rem!=0 && n%rem==0)cnt++;
+	}
+	return cnt;
+}

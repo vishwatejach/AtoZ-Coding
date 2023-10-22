@@ -1,0 +1,14 @@
+Link: https://www.codingninjas.com/studio/problems/check-armstrong_589?leftPanelTab=0
+
+
+bool checkArmstrong(int n){
+	//Write your code here
+	int cnt = (int) log10(n) + 1, t1 = n, t2 = 0, m=0;
+	while(t1 > 0)
+	{
+		t2 = t1%10;
+		m += pow(t2,cnt);
+		t1/=10;
+	}
+	return m==n;
+}

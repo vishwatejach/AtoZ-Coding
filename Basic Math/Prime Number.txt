@@ -1,0 +1,14 @@
+Link: https://www.codingninjas.com/studio/problems/check-prime_624934?leftPanelTab=0
+
+
+bool isPrime(int n)
+{
+	// Write your code here.
+	for(int i=2;i<=sqrt(n);i++)
+	{
+		if(n%i!=0)
+		continue;
+		else return false;
+	}
+	return (n==1)?false:true;
+}
