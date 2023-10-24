@@ -1,0 +1,11 @@
+Link: https://www.codingninjas.com/studio/problems/-print-n-times_8380707?leftPanelTab=0
+
+
+vector<string> printNTimes(int n) {
+	// Write your code here.
+	vector<string> ans;
+	if(n<1) return ans;
+	ans = printNTimes(n-1);
+	ans.emplace_back("Coding Ninjas");
+	return ans;
+}
