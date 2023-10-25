@@ -1,0 +1,42 @@
+Link: https://www.codingninjas.com/studio/problems/k-most-occurrent-numbers_625382?leftPanelTab=0
+
+
+
+vector<int> getFrequencies(vector<int>& v) {
+    // Write Your Code Here
+    unordered_map<int,int> mp;
+    for(int i=0; i<v.size(); i++)
+    {
+        mp[v[i]]++;
+    }
+    int mini=INT_MAX, maxi=INT_MIN, mi, ma;
+    for(auto it:mp)
+    {
+        if(it.second>maxi)
+        {
+            maxi = it.second;
+            ma = it.first;  
+        }
+        
+        if(it.second<mini)
+        {
+            mini = it.second;
+            mi = it.first;
+        }
+        
+        if(it.second == mini)
+        {
+            mi = min(mi,it.first);
+        }
+        
+        if(it.second == maxi)
+        {
+            ma = min(ma,it.first);
+        }
+    }
+    
+    vector<int> ans;
+    ans.emplace_back(ma);
+    ans.emplace_back(mi);
+    return ans;
+}
