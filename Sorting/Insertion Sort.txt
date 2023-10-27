@@ -2,6 +2,9 @@ Link: https://www.codingninjas.com/studio/problems/insertion-sort_624381
 
 
 
+Iterartive Approach:
+
+
 void insertionSort(int arr[], int n)
 {
     //write your code here
@@ -16,4 +19,27 @@ void insertionSort(int arr[], int n)
             j--;
         }
     }
+}
+
+
+
+Recursive Approach:
+
+
+void i_sort(int arr[], int n, int i)
+{
+    if(i==n) return;
+    int j=i;
+    while(j>0 && arr[j-1]>arr[j])
+    {
+        swap(arr[j-1],arr[j]);
+        j--;
+    }
+    i_sort(arr,n,i+1);
+}
+
+void insertionSort(int arr[], int n)
+{
+    //write your code here
+    void i_sort(arr,n,0);
 }

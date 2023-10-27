@@ -1,0 +1,27 @@
+Link: https://www.codingninjas.com/studio/problems/quick-sort_5844
+
+
+
+int partitionArray(int arr[], int start, int end) {
+	int piv = start;
+	int i = start;
+	int j = end;
+	
+	while(i<j)
+	{
+		while(arr[i]<=arr[piv] && i<end)i++;
+		while(arr[j]>arr[piv] && j>start)j--;
+		if(i<j)swap(arr[i],arr[j]);
+	}
+	swap(arr[piv],arr[j]);
+	return j;
+}
+
+void quickSort(int input[], int start, int end) {
+	if(start<end)
+	{
+		int p = partitionArray(input, start, end);
+		quickSort(input,start,p-1);
+		quickSort(input,p+1,end);
+	}
+}
