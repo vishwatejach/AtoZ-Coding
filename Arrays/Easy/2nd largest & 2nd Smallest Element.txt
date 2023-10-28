@@ -1,35 +1,34 @@
-Link:  https://www.codingninjas.com/studio/problems/ninja-and-the-second-order-elements_6581960?leftPanelTabValue=SOLUTION&leftPanelTab=1
+Link:  https://www.codingninjas.com/studio/problems/ninja-and-the-second-order-elements_6581960?leftPanelTab=1
 
 
 
 vector<int> getSecondOrderElements(int n, vector<int> a) {
     // Write your code here.
-    int maxi1=a[0],maxi2=INT_MIN,mini1=a[0],mini2=INT_MAX;
-
+    vector<int> ans;
+    int l2=INT_MIN, l1=a[0], s2=INT_MAX, s1=a[0];
     for(int i=1; i<n; i++)
     {
-        if(a[i]>maxi1)
+        if(a[i]>l1)
         {
-            maxi2=maxi1;
-            maxi1=a[i];
+            l2 = l1;
+            l1 = a[i];
         }
-        else if(a[i]>maxi2 && a[i]<maxi1)
+        else if(a[i]>l2 && a[i]<l1)
         {
-            maxi2 = a[i];
+            l2 = a[i];   
         }
         
-        if(a[i]<mini1)
+        if(a[i]<s1)
         {
-            mini2=mini1;
-            mini1=a[i];
+            s2 = s1;
+            s1 = a[i];
         }
-        else if(a[i]<mini2 && a[i]>mini1)
+        else if(a[i]<s2 && a[i]>s1)
         {
-            mini2 = a[i];
+            s2 = a[i];   
         }
     }
-    vector<int> ans;
-    ans.emplace_back(maxi2);
-    ans.emplace_back(mini2);
+    ans.emplace_back(l2);
+    ans.emplace_back(s2);
     return ans;
 }
