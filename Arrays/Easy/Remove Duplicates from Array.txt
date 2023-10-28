@@ -1,0 +1,20 @@
+Link1: https://www.codingninjas.com/studio/problems/remove-duplicates-from-sorted-array_1102307?leftPanelTab=1
+
+Link2: https://leetcode.com/problems/remove-duplicates-from-sorted-array/solutions/3676877/best-method-100-c-java-python-beginner-friendly/
+
+
+int removeDuplicates(vector<int> &arr, int n) {
+	// Write your code here.
+	int p1=0, p2=1;
+
+	while(p2<n)
+	{
+		if(arr[p1]!=arr[p2])
+		{
+			arr[p1+1] = arr[p2];
+			p1++;
+		}
+		p2++;
+	}
+	return p1+1;
+}
