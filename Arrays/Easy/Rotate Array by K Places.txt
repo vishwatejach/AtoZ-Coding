@@ -1,0 +1,62 @@
+(Left Rotate)
+
+Link: https://www.codingninjas.com/studio/problems/rotate-array_1230543?leftPanelTab=1
+
+
+Brute:
+
+vector<int> rotateArray(vector<int>arr, int k) {
+    // Write your code here.
+    int n = arr.size();
+    k=k%n;
+    int temp[k];
+    for(int i=0; i<k; i++)
+    {
+        temp[i] = arr[i];
+    }
+    for(int i=k; i<n; i++)
+    {
+        arr[i-k]=arr[i];
+    }
+    for(int i=n-k; i<n; i++)
+    {
+        arr[i] = temp[i-n+k];
+    }
+
+    return arr;
+}
+
+Optimal:
+
+#include<bits/stdc++.h>
+vector<int> rotateArray(vector<int> &arr, int k) {
+    // Write your code here.
+    int n = arr.size();
+    k=k%n;
+    
+    reverse(arr.begin(),arr.begin()+k);
+    reverse(arr.begin()+k,arr.end());
+    reverse(arr.begin(),arr.end());
+
+    return arr;
+}
+
+
+
+(Right Rotate)
+
+Link: https://leetcode.com/problems/rotate-array/description/
+
+
+
+class Solution {
+public:
+    void rotate(vector<int>& arr, int k) {
+        int n = arr.size();
+        k=k%n;
+    
+        reverse(arr.begin(),arr.begin()+n-k);
+        reverse(arr.begin()+n-k,arr.end());
+        reverse(arr.begin(),arr.end());
+    }
+};
