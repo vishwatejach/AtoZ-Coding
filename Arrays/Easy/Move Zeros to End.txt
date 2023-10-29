@@ -1,0 +1,56 @@
+Link1: https://www.codingninjas.com/studio/problems/ninja-and-the-zero-s_6581958?leftPanelTab=1
+
+Link2: https://leetcode.com/problems/move-zeroes/
+
+
+
+Method-1:
+
+vector<int> moveZeros(int n, vector<int> a) {
+    // Write your code here.
+    int p = -1;
+    for(int i=0; i<n; i++)
+    {
+        if(a[i]==0)
+        {
+            p=i;
+            break;
+        }
+    }
+    if(p<0) return a;
+    for(int i=p; i<n; i++)
+    {
+        if(a[i]!=0)
+        {
+            swap(a[i],a[p]);
+            p++;
+        }
+    }
+    return a;
+
+}
+
+
+
+
+Method-2:
+
+class Solution {
+public:
+    void moveZeroes(vector<int>& nums) {
+        int p=0,count=0;
+        for(int i=0; i<nums.size();i++)
+        {
+            if(nums[i]!=0)
+            {
+                nums[p]=nums[i];
+                p++;
+            }
+        }
+
+        for(int i=p; i<nums.size(); i++)
+        {
+            nums[i] = 0;
+        }
+    }
+};
