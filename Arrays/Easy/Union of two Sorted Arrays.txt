@@ -1,0 +1,47 @@
+Link: https://www.codingninjas.com/studio/problems/sorted-array_6613259?leftPanelTab=1
+
+
+
+vector < int > sortedArray(vector < int > a, vector < int > b) {
+    // Write your code here
+    int i=0,j=0;
+    vector<int> res;
+    while(i<a.size()&&j<b.size())
+    {
+      if(a[i]<=b[j])
+      {
+        if(res.size()==0 || a[i]!=res.back())
+        {
+          res.emplace_back(a[i]);
+          if(a[i]==b[j]) j++;
+        } 
+        i++;
+        
+      }
+      else 
+      {
+        if(res.size()==0 || b[j]!=res.back())
+        {
+          res.emplace_back(b[j]);
+        } 
+        j++;
+      }
+    }
+
+    while(i<a.size())
+    {
+      if(res.size()==0 || a[i]!=res.back())
+      {
+        res.emplace_back(a[i]);
+      }
+        i++;
+    }
+    while(j<b.size())
+    {
+      if(res.size()==0 || b[j]!=res.back())
+      res.emplace_back(b[j]);
+      j++;
+    }
+
+    return res;
+}
